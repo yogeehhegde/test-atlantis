@@ -1,0 +1,10 @@
+version: 2
+automerge: false
+parallel_plan: true
+projects:
+  - name: atlantis-test
+    dir: ./modules/
+    workspace: atlantis-test
+    terraform_version: "1.3.9"
+    autoplan:
+      enabled: true
