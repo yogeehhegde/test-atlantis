@@ -1,21 +1,14 @@
 terraform {
   required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
+    local = {
+      source  = "hashicorp/local"
+      version = "~> 2.0"
     }
   }
 }
 
-provider "aws" {
-  region = "us-west-2"
-}
 
-resource "aws_s3_bucket" "atlantis" {
-  bucket = "test-atlantis-yogeesh"
-
-  tags = {
-    Name        = "atlantis S3 Bucket"
-    Environment = "Dev"
-  }
+resource "local_file" "test_file" {
+  filename = "${path.module}/test.txt"
+  content  = "This is a test file created by Terraform."
 }
