@@ -9,6 +9,6 @@ terraform {
 
 
 resource "local_file" "test_file" {
-  filename = "${path.module}/test1.txt"
+  filename = "${path.module}/test2.txt"
   content  = "This is a test file created by Terraform."
 }
